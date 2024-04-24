@@ -50,7 +50,7 @@
             // btnStartCopying
             // 
             this.btnStartCopying.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnStartCopying.Location = new System.Drawing.Point(12, 414);
+            this.btnStartCopying.Location = new System.Drawing.Point(12, 420);
             this.btnStartCopying.Margin = new System.Windows.Forms.Padding(4);
             this.btnStartCopying.Name = "btnStartCopying";
             this.btnStartCopying.Size = new System.Drawing.Size(226, 66);
@@ -59,14 +59,10 @@
             this.btnStartCopying.UseVisualStyleBackColor = false;
             this.btnStartCopying.Click += new System.EventHandler(this.ButtonStartCopying_Click);
             // 
-            // folderBrowserDialog1
-            // 
-            this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
-            // 
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 208);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 214);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(857, 183);
             this.richTextBox1.TabIndex = 3;
@@ -105,17 +101,18 @@
             this.labelPathFiles.Size = new System.Drawing.Size(129, 16);
             this.labelPathFiles.TabIndex = 6;
             this.labelPathFiles.Text = "Путь к исходникам";
-            this.labelPathFiles.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 179);
+            this.label2.Location = new System.Drawing.Point(13, 157);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 16);
+            this.label2.Size = new System.Drawing.Size(439, 48);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Скорпируй список файлов в это поле:";
+            this.label2.Text = "Скорпируй список файлов в это поле.\n" +
+                "Принимает только имена файлов без расширения, через пробел.\n" +
+                "Например: DSC_0001 DSC_0002 DSC_007";
             // 
             // label1
             // 
@@ -135,29 +132,26 @@
             this.richTextBoxChildrenName.Size = new System.Drawing.Size(857, 29);
             this.richTextBoxChildrenName.TabIndex = 2;
             this.richTextBoxChildrenName.Text = "";
-            this.richTextBoxChildrenName.TextChanged += new System.EventHandler(this.richTextBoxChildrenName_TextChanged);
             // 
             // lblFinalPath
             // 
             this.lblFinalPath.AutoSize = true;
-            this.lblFinalPath.Location = new System.Drawing.Point(260, 439);
+            this.lblFinalPath.Location = new System.Drawing.Point(260, 445);
             this.lblFinalPath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFinalPath.Name = "lblFinalPath";
             this.lblFinalPath.Size = new System.Drawing.Size(122, 16);
             this.lblFinalPath.TabIndex = 0;
             this.lblFinalPath.Text = "Финальная папка";
-            this.lblFinalPath.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 496);
+            this.label3.Location = new System.Drawing.Point(13, 502);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(440, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "!!! Если в папке уже есть файл с таким именем - он перезапишется";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // missingFilesTextBox
             // 
@@ -168,7 +162,6 @@
             this.missingFilesTextBox.Size = new System.Drawing.Size(857, 123);
             this.missingFilesTextBox.TabIndex = 12;
             this.missingFilesTextBox.Text = "";
-            this.missingFilesTextBox.TextChanged += new System.EventHandler(this.missingFilesTextBox_TextChanged);
             // 
             // label4
             // 
@@ -184,7 +177,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // contextMenuStrip2
             // 

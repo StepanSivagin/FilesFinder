@@ -17,7 +17,7 @@ namespace FilesFinder
         public Form1()
         {
             InitializeComponent();
-
+            //загружаем путь к последней использованной папке
             LoadLastDirectory();
 
             ToolStripMenuItem copyMenuItemFilesNames = new ToolStripMenuItem("Copy");
@@ -72,13 +72,22 @@ namespace FilesFinder
         string _filesNotExist;
         private void ButtonStartCopying_Click(object sender, EventArgs e)
         {
+            if (richTextBoxChildrenName.Text == "")
+            {
+                MessageBox.Show("Не указана целевая папка.\nНекуда копировать!");
+                return;
+
+            } else if (filesNames == null)
+            {
+                MessageBox.Show("Не указаны имена файлов.\nНечего копировать!");
+                return;
+            }
             missingFilesTextBox.Enabled = true;
             CreateDirectoryAndCopyFiles();
         }
 
         private void CreateDirectoryAndCopyFiles()
         {
-            //string directoryPath = $"{folderBrowserDialog1.SelectedPath}\\{richTextBoxChildrenName.Text}";
             string directoryPath = $"{_lastPath}\\{richTextBoxChildrenName.Text}";
             lblFinalPath.Text = directoryPath;
             Directory.CreateDirectory(directoryPath);
@@ -159,13 +168,12 @@ namespace FilesFinder
             this.Close();
         }
 
-
-
         #region Context Menu
 
         private ContextMenuStrip _contextMenuStrip;
         private void CopyText(RichTextBox richTextBox)
         {
+            if (richTextBox.SelectedText == "") return;
             Clipboard.SetText(richTextBox.SelectedText);
         }
 
@@ -200,41 +208,6 @@ namespace FilesFinder
         private void pasteToolMissingFiles(Object sender, EventArgs e)
         {
             PasteText(missingFilesTextBox);
-        }
-        #endregion
-
-
-        #region Empty Metods
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBoxChildrenName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void missingFilesTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
         #endregion
     }
